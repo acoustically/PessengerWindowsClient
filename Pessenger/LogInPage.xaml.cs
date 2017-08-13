@@ -16,13 +16,19 @@ using System.Windows.Shapes;
 namespace Pessenger
 {
   /// <summary>
-  /// MainWindow.xaml에 대한 상호 작용 논리
+  /// LogInPage.xaml에 대한 상호 작용 논리
   /// </summary>
-  public partial class MainWindow : NavigationWindow
+  public partial class LogInPage : Page
   {
-    public MainWindow()
+    public LogInPage()
     {
       InitializeComponent();
+    }
+
+    private void TextBlock_MouseUp(object sender, MouseButtonEventArgs e)
+    {
+      App.Current.Properties["phoneNumber"] = textBox.Text;
+      this.NavigationService.Navigate(new Uri("LogInPage2.xaml", UriKind.Relative));
     }
   }
 }
