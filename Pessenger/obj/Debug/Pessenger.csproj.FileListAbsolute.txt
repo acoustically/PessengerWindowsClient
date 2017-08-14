@@ -17,3 +17,7 @@ C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\LogInPage.baml
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\LogInPage2.g.cs
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\LogInPage2.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.dll
+C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.xml

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -26,31 +27,42 @@ namespace Pessenger
       public Object Data { get => data; set => data = value; }
     }
 
-    public static void ReadSocket(Socket socket, List<Object> data)
+    public static void ReadSocket(Socket socket)
     {
       Thread thread = new Thread(ReadSocketCallback);
-      thread.Start(new Containner(socket, data));
+      thread.SetApartmentState(ApartmentState.STA);
+      thread.IsBackground = true;
+      thread.Start(socket);
     }
 
     private static void ReadSocketCallback(Object containner)
     {
-      Socket socket = ((Containner)containner).Socket;
-      List<Object> dataContainner = (List<Object>)((Containner)containner).Data;
-
+      Socket socket = (Socket)containner;
       List<byte> data = new List<byte>();
       byte[] dataPiece = new byte[1024];
-      while (socket.Receive(dataPiece) < 1024)
+      while (true)
       {
-        data.AddRange(dataPiece);
+        int dataLength;
+        if ((dataLength = socket.Receive(dataPiece)) < 1024 && dataLength != 0)
+        {
+          String dataString = Encoding.UTF8.GetString(dataPiece);
+          SmsMessageBox smsMessageBox = new SmsMessageBox(dataString);
+          smsMessageBox.Show();
+          System.Windows.Threading.Dispatcher.Run();
+          return;
+        }
+        else
+        {
+
+        }
       }
 
-      dataContainner.Add(Encoding.UTF8.GetString(data.ToArray()));
-      MessageBox.Show(Encoding.UTF8.GetString(data.ToArray()));
     }
 
     public static void WriteSocket(Socket socket, Object data)
     {
       Thread thread = new Thread(WriteSocketCallBack);
+      thread.IsBackground = true;
       thread.Start(new Containner(socket, data));
     }
 
