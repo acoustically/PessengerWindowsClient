@@ -21,3 +21,5 @@ C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.g.c
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.baml
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.dll
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.xml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\MainPage.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\MainPage.baml

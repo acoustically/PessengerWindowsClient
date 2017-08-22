@@ -13,5 +13,8 @@ namespace Pessenger
   /// </summary>
   public partial class App : Application
   {
+    public App() {
+      App.Current.Properties["LogInState"] = "Collapsed";
+    }
   }
 }

@@ -60,7 +60,7 @@ namespace Pessenger
       socket.Connect(endPoint);
       String data = JsonBuilder.BuildJson(new Account(phoneNumber, password));
       SocketCommunicator.WriteSocket(socket, data);
-      SocketCommunicator.ReadSocket(socket);
+      SocketCommunicator.ReadSocket(socket, this);
     }
   }
 }

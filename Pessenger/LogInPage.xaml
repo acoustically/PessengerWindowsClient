@@ -17,6 +17,8 @@
       <RowDefinition Height="10*"/>
       <RowDefinition Height="40*"/>
     </Grid.RowDefinitions>
+    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" Grid.Row="0"
+               Visibility="{Binding Source={x:Static Application.Current},Path=Properties[LogInState]}" Text="Phone number or password is incorrect"/>
     <Grid Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
       <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 0, 0, 0" MinWidth="50" Text="Phone number" 
                    Foreground="LightSteelBlue" Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource hintTextBoxConverter}}" />

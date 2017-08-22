@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using static Pessenger.LogInPage2;
 
 namespace Pessenger
@@ -27,17 +28,17 @@ namespace Pessenger
       public Object Data { get => data; set => data = value; }
     }
 
-    public static void ReadSocket(Socket socket)
+    public static void ReadSocket(Socket socket, Page page)
     {
       Thread thread = new Thread(ReadSocketCallback);
       thread.SetApartmentState(ApartmentState.STA);
       thread.IsBackground = true;
-      thread.Start(socket);
+      thread.Start(new Containner(socket, page));
     }
 
     private static void ReadSocketCallback(Object containner)
     {
-      Socket socket = (Socket)containner;
+      Socket socket = (Socket)((Containner)containner).Socket;
       List<byte> data = new List<byte>();
       byte[] dataPiece = new byte[1024];
       while (true)
@@ -46,10 +47,31 @@ namespace Pessenger
         if ((dataLength = socket.Receive(dataPiece)) < 1024 && dataLength != 0)
         {
           String dataString = Encoding.UTF8.GetString(dataPiece);
-          SmsMessageBox smsMessageBox = new SmsMessageBox(dataString);
-          smsMessageBox.Show();
-          System.Windows.Threading.Dispatcher.Run();
-          return;
+          if (int.Parse(dataString) == 0)
+          {
+            Page page = (Page)((Containner)containner).Data;
+            App.Current.Dispatcher.Invoke(() =>
+            {
+              App.Current.Properties["LogInState"] = "Visible";
+              page.NavigationService.Navigate(new Uri("LogInPage.xaml", UriKind.Relative));
+            });
+          }
+          else if (int.Parse(dataString) == 1)
+          {
+            Page page = (Page)((Containner)containner).Data;
+            
+            App.Current.Dispatcher.Invoke(()=>
+            {
+              page.NavigationService.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
+            });
+          }
+          else
+          {
+            SmsMessageBox smsMessageBox = new SmsMessageBox(dataString);
+            smsMessageBox.Show();
+            System.Windows.Threading.Dispatcher.Run();
+            return;
+          }
         }
         else
         {

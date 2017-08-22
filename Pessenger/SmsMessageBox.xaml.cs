@@ -1,19 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace Pessenger
 {
@@ -36,11 +24,17 @@ namespace Pessenger
     private void OnCreate(object sender, RoutedEventArgs e)
     {
       JObject json = JObject.Parse(jsonData);
-      phoneNumberTextBlock.Text = json["sms-sender-phone-number"].ToString();
-      smsBodyTextBlock.Text = json["sms-body"].ToString();
+      phoneNumberTextBlock.Text = json["smsSenderPhoneNumber"].ToString();
+      smsBodyTextBlock.Text = json["smsBody"].ToString();
+
     }
-    private void updateWindow()
+    public new void Show()
     {
+      base.Show();
+      Timer timer = new Timer((Object param)=>
+      {
+        this.Dispatcher.Invoke(Close);
+      }, null, 4000, 1000);
     }
   }
 }
