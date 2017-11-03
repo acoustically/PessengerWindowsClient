@@ -61,7 +61,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Environment\Environment.cs" />
-    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpRequest\HttpRequest.cs" />
+    <Compile Include="HttpRequest\HttpResponse.cs" />
     <Compile Include="Page\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

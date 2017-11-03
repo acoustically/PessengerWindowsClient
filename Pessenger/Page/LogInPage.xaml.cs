@@ -20,14 +20,13 @@ namespace Pessenger
     private void TextBlock_MouseUp(object sender, MouseButtonEventArgs e)
     {
       string phoneNumber = textBox.Text;
-      HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Environment.GetUrl("/user/" + phoneNumber));
-      request.Method = "GET";
-      request.Headers.Add("Authorization", "Token acoustically");
-      HttpResponse response = new HttpResponse(request);
-      JObject json = JObject.Parse(response.Data);
-      MessageBox.Show(json.ToString());
-      App.Current.Properties["phoneNumber"] = textBox.Text;
-      this.NavigationService.Navigate(new Uri("LogInPage2.xaml", UriKind.Relative));
+      HttpRequest request = new HttpRequest();
+      JObject json = JObject.Parse(request.Get(Environment.GetUrl("/user/" + phoneNumber)));
+      if (json["response"].ToString() == "success")
+      {
+        App.Current.Properties["phoneNumber"] = textBox.Text;
+        this.NavigationService.Navigate(new Uri("Page/LogInPage2.xaml", UriKind.Relative));
+      }
     }
   }
 }

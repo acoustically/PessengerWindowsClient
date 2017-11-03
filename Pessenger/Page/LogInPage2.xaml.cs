@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Net;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -18,6 +20,14 @@ namespace Pessenger
     {
       String password = passwordBox.Password;
       String phoneNumber = (String)App.Current.Properties["phoneNumber"];
+      HttpRequest request = new HttpRequest();
+      JObject json = new JObject();
+      json.Add("password", password);
+      json = JObject.Parse(request.Post("/user/" + phoneNumber, json));
+      if (json["response"].ToString() == "success")
+      {
+        this.NavigationService.Navigate(new Uri("Page/MainPage.xaml", UriKind.Relative));
+      }
     }
   }
 }
