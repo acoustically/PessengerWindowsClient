@@ -60,23 +60,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="JsonBuilder.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Environment\Environment.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="Page\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SmsMessageBox.xaml.cs">
       <DependentUpon>SmsMessageBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SocketCommunicator.cs" />
-    <Page Include="LogInPage.xaml">
+    <Page Include="Page\LogInPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LogInPage2.xaml">
+    <Page Include="Page\LogInPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Page\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,10 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HintTextBoxConverter.cs" />
-    <Compile Include="LogInPage.xaml.cs">
+    <Compile Include="Page\LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LogInPage2.xaml.cs">
+    <Compile Include="Page\LogInPage2.xaml.cs">
       <DependentUpon>LogInPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -132,7 +132,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MessageIcon.png" />
+    <Resource Include="Resource\MessageIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

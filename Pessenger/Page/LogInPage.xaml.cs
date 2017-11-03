@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Pessenger
 {
@@ -27,6 +19,13 @@ namespace Pessenger
 
     private void TextBlock_MouseUp(object sender, MouseButtonEventArgs e)
     {
+      string phoneNumber = textBox.Text;
+      HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Environment.GetUrl("/user/" + phoneNumber));
+      request.Method = "GET";
+      request.Headers.Add("Authorization", "Token acoustically");
+      HttpResponse response = new HttpResponse(request);
+      JObject json = JObject.Parse(response.Data);
+      MessageBox.Show(json.ToString());
       App.Current.Properties["phoneNumber"] = textBox.Text;
       this.NavigationService.Navigate(new Uri("LogInPage2.xaml", UriKind.Relative));
     }
