@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Home\Development\PessengerWindowsClient\Pessenger\App.xaml
-5745739985
+6-625026997
 
-171528785042
+18-1763467598
 17-43161618
-Page\LogInPage.xaml;Page\LogInPage2.xaml;Page\MainPage.xaml;MainWindow.xaml;SmsMessageBox.xaml;
+Pages\LogInPage.xaml;Pages\LogInPage2.xaml;Pages\MainPage.xaml;MainWindow.xaml;Pages\SetClientNamePage.xaml;SmsMessageBox.xaml;
 
-False
+True
 

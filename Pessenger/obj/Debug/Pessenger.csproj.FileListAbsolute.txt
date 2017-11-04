@@ -1,7 +1,6 @@
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Pessenger.exe.config
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Pessenger.exe
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Pessenger.pdb
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pessenger.csprojResolveAssemblyReference.cache
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\MainWindow.g.cs
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\App.g.cs
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pessenger_MarkupCompile.cache
@@ -17,9 +16,12 @@ C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.g.c
 C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\SmsMessageBox.baml
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.dll
 C:\Home\Development\PessengerWindowsClient\Pessenger\bin\Debug\Newtonsoft.Json.xml
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\LogInPage.g.cs
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\LogInPage2.g.cs
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\MainPage.g.cs
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\LogInPage.baml
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\LogInPage2.baml
-C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Page\MainPage.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\LogInPage.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\LogInPage2.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\MainPage.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\SetClientNamePage.g.cs
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\LogInPage.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\LogInPage2.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\MainPage.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pages\SetClientNamePage.baml
+C:\Home\Development\PessengerWindowsClient\Pessenger\obj\Debug\Pessenger.csprojResolveAssemblyReference.cache

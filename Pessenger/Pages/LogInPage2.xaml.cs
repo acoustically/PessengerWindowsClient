@@ -23,10 +23,10 @@ namespace Pessenger
       HttpRequest request = new HttpRequest();
       JObject json = new JObject();
       json.Add("password", password);
-      json = JObject.Parse(request.Post("/user/" + phoneNumber, json));
+      json = JObject.Parse(request.Post(Environment.GetUrl("/user/" + phoneNumber), json));
       if (json["response"].ToString() == "success")
       {
-        this.NavigationService.Navigate(new Uri("Page/MainPage.xaml", UriKind.Relative));
+        this.NavigationService.Navigate(new Uri("Pages/SetClientNamePage.xaml", UriKind.Relative));
       }
     }
   }

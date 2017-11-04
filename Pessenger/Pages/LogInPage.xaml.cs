@@ -25,7 +25,7 @@ namespace Pessenger
       if (json["response"].ToString() == "success")
       {
         App.Current.Properties["phoneNumber"] = textBox.Text;
-        this.NavigationService.Navigate(new Uri("Page/LogInPage2.xaml", UriKind.Relative));
+        this.NavigationService.Navigate(new Uri("Pages/LogInPage2.xaml", UriKind.Relative));
       }
     }
   }

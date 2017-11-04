@@ -10,31 +10,28 @@ namespace Pessenger
   /// </summary>
   public partial class SmsMessageBox : Window
   {
-    String jsonData;
-    public SmsMessageBox(String jsonData)
+    private string from_;
+    private string body;
+    public SmsMessageBox(string from_, string body)
     {
       Left = System.Windows.SystemParameters.WorkArea.Width - 240;
       Top = System.Windows.SystemParameters.WorkArea.Height - 160;
-      this.jsonData = jsonData;
+      this.from_ = from_;
+      this.body = body;
       InitializeComponent();
     }
-
-    public string JsonData { get => jsonData; set => jsonData = value; }
-
+   
     private void OnCreate(object sender, RoutedEventArgs e)
     {
-      JObject json = JObject.Parse(jsonData);
-      phoneNumberTextBlock.Text = json["smsSenderPhoneNumber"].ToString();
-      smsBodyTextBlock.Text = json["smsBody"].ToString();
+      phoneNumberTextBlock.Text = from_;
+      smsBodyTextBlock.Text = body;
 
     }
     public new void Show()
     {
       base.Show();
-      Timer timer = new Timer((Object param)=>
-      {
-        this.Dispatcher.Invoke(Close);
-      }, null, 4000, 1000);
+      Thread.Sleep(3000);
+      Close();
     }
   }
 }

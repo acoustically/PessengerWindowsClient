@@ -1,0 +1,39 @@
+﻿<Page x:Class="Pessenger.SetClientNamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pessenger"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="SetClientNamePage">
+
+  <Page.Resources>
+    <local:HintTextBoxConverter x:Key="hintTextBoxConverter"/>
+  </Page.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40*"/>
+      <RowDefinition Height="10*"/>
+      <RowDefinition Height="10*"/>
+      <RowDefinition Height="40*"/>
+    </Grid.RowDefinitions>
+    <Grid Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+      <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 0, 0, 0" MinWidth="50" Text="P.C Name" 
+                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=passwordBox, Path=Text.IsEmpty, Converter={StaticResource hintTextBoxConverter}}" />
+      <TextBox Width="200" Height="30" Padding="8, 5, 0, 0" Name="textBox" Background="Transparent" />
+    </Grid>
+    <TextBlock Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"  MouseUp="TextBlock_MouseUp" Text="Ok">
+      <TextBlock.Style>
+        <Style TargetType="TextBlock">
+          <Setter Property="Foreground" Value="LightSkyBlue"/>
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Foreground" Value="DeepSkyBlue"/>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </TextBlock.Style>
+    </TextBlock>
+  </Grid>
+</Page>

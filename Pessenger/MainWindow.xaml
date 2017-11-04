@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:Pessenger"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="300"
-        Source="Page/LogInPage.xaml"
+        Source="Pages/LogInPage.xaml"
         ShowsNavigationUI="False">
 </NavigationWindow>
