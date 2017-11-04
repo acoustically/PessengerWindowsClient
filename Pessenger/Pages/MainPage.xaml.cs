@@ -28,13 +28,12 @@ namespace Pessenger
         JObject json = JObject.Parse(request.Get(Environment.GetUrl("/sms-message/" + phoneNumber + "/" + id)));
         if (json["response"].ToString() == "success")
         {
-          MessageBox.Show(json["sms_message"].ToString());
           json = JObject.Parse(json["sms_message"].ToString());
           string from_ = json["from_"].ToString();
           string body = json["body"].ToString();
           (new SmsMessageBox(from_, body)).Show();
         }
-        Thread.Sleep(200);
+        Thread.Sleep(800);
       }
     }
   }

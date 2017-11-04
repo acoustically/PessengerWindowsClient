@@ -30,7 +30,7 @@ namespace Pessenger
     public new void Show()
     {
       base.Show();
-      Thread.Sleep(3000);
+      Thread.Sleep(4000);
       Close();
     }
   }
